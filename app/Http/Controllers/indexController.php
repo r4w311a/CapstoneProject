@@ -9,4 +9,9 @@ class indexController extends Controller
    public function index(){
         return view('main.index');
    }
+
+   public function products(){
+      return view('admin.products');
+ }
+
 }
