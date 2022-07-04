@@ -268,7 +268,7 @@ li {
 }
 
 .nav-list .icons {
-  display: none;
+  display: flex;
 }
 
 .nav-center .nav-item:not(:last-child) {
@@ -354,9 +354,11 @@ li {
   }
 
   .icons {
-    display: none;
+    display: flex;
+    
   }
 
+ 
   .nav-list .icons {
     display: flex;
   }
@@ -1495,7 +1497,13 @@ table tr:hover {
   transition: .5s;
 }
 .box:hover input{
-  width: 350px;
+  width: 150px;
+  background: #f5f5dc;;
+  border-radius: 10px;
+}
+
+.box input:focus{
+  width: 150px;
   background: #f5f5dc;;
   border-radius: 10px;
 }
