@@ -31,11 +31,7 @@
                         @error('category_name')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-                        <label class="mt-3" for="category_icon">Category Icon:</label>
-                        <input type="text" value="{{ $category->category_icon }}" class="form-control mt-3" id="category_icon" name="category_icon">
-                        @error('category_icon')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                       
                     </div>
                     <button type="submit" class="btn-download">Update Category</button>
                 </form>

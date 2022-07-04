@@ -33,7 +33,7 @@ rel="stylesheet"
                       {{ session('status') }}
                   </div>
               @endif
-      
+              <x-jet-validation-errors class="mb-4" />
               <form method="POST" action="{{ isset($guard) ? url($guard. '/login') :  route('login') }}">
                   @csrf
 

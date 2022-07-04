@@ -45,6 +45,13 @@ searchButton.addEventListener('click', function (e) {
 })
 
 
+var tags = document.querySelector('input[name=product_tags]');
+var size = document.querySelector('input[name=product_size]');
+var color = document.querySelector('input[name=product_color]');
+
+new Tagify(tags)
+new Tagify(size)
+new Tagify(color)
 
 
 

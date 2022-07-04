@@ -21,12 +21,12 @@ class CategoryController extends Controller
 
     $validated = $request->validate([
         'category_name' => 'required|unique:categories|max:255',
-        'category_icon' => 'required|max:255',
+        
     ]);
 
         Category::insert([
             'category_name' => $request->category_name,
-            'category_icon' => $request->category_icon,
+           
             'category_slug' => strtolower(str_replace(' ', '-' , $request->category_name)),
             'created_at' => Carbon::now(),
         ]);
@@ -43,11 +43,11 @@ class CategoryController extends Controller
 public function update_category(Request $request, $id){
     $validated = $request->validate([
           'category_name' => 'required|unique:categories|max:255',
-          'category_icon' => 'required|max:255'
+        
     ]);
       Category::where('id', $id)->update([
           'category_name' => $request->category_name,
-          'category_icon' => $request->category_icon,
+        
       ]);
       return Redirect()->route('view-categories')->with('success', 'Category updated successfully');
 }

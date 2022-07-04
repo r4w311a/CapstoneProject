@@ -1,5 +1,5 @@
 <a href="{{ route('admin.dashboard') }}" class="logo">
-    <i class="bx bx-ghost"></i>
+    <i class="bx bx-cart"></i>
     <span class="text">Admin Panel</span>
 </a>
 
@@ -12,14 +12,7 @@
 
         </a>
     </li>
-    <li class="{{ request()->is('admin/products') ? 'active' : '' }}">
-
-        <a href="{{ url('/admin/products')}}">
-            <i class="bx bxs-store"></i>
-            <span class="text">Products</span>
-        </a>
-
-    </li>
+    
 
     <li class="{{ request()->is('admin/categories') ? 'active' : '' }}">
         <a href="{{ url('/admin/categories')}}">
@@ -34,12 +27,27 @@
             <span class="text">Sub Categories</span>
         </a>
     </li>
+    <li class="{{ request()->is('admin/products') ? 'active' : '' }}">
+
+        <a href="{{ url('/admin/products')}}">
+            <i class="bx bxs-store"></i>
+            <span class="text">Products</span>
+        </a>
+
+    </li>
     <li class="{{ request()->is('admin/orders') ? 'active' : '' }}">
         <a href="{{ url('/admin/orders')}}">
             <i class="bx bxs-shopping-bag"></i>
             <span class="text">Orders</span>
         </a>
     </li>
+    <li class="{{ request()->is('admin/users') ? 'active' : '' }}">
+        <a href="{{ url('/admin/users')}}">
+            <i class="bx bxs-user"></i>
+            <span class="text">Users</span>
+        </a>
+    </li>
+    
 </ul>
 <ul class="side-menu">
     <li class="{{ request()->is('admin/settings') ? 'active' : '' }}">

@@ -6,7 +6,7 @@
             <h2>Dashboard</h2>
             <ul class="breadcrumb">
                 <li>
-                    <a href="{{route('dashboard')}}">Dashboard</a>
+                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i></li>
                 <li>
@@ -14,30 +14,27 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="btn-download">
-            <i class="bx bx-download"></i>
-            <span class="text">Download PDF</span>
-        </a>
+       
     </div>
     <ul class="box-info">
         <li>
             <i class='bx bxs-calendar-check'></i>
             <span class="text">
-                <h3>26</h3>
-                <p>New Order</p>
+                <h3>{{count($orders)}}</h3>
+                <p>Total Orders</p>
             </span>
         </li>
         <li>
             <i class='bx bxs-group'></i>
             <span class="text">
-                <h3>1468</h3>
-                <p>Visitors</p>
+                <h3>{{$users}}</h3>
+                <p>Customers</p>
             </span>
         </li>
         <li>
             <i class='bx bxs-dollar-circle'></i>
             <span class="text">
-                <h3>$649</h3>
+                <h3>{{$total}}$</h3>
                 <p>Total Sales</p>
             </span>
         </li>
@@ -50,52 +47,28 @@
             <table>
                 <thead>
                     <tr>
-                        <th>User</th>
-                        <th>Date Order</th>
+                        <th>Username</th>
+                        <th>Invoice No.</th>
+                        <th>Order Date</th>
+                        <th>Amount</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($orders as $order)
                     <tr>
                         <td>
-                            <img src="{{ asset('backend/images/avatar.png')}}">
-                            <p>User Name</p>
+                            {{$order->user->name}}
                         </td>
-                        <td>06-02-2022</td>
-                        <td><span class="status completed">Completed</span></td>
-                    </tr>
-                    <tr>
                         <td>
-                            <img src="{{ asset('backend/images/avatar.png')}}">
-                            <p>User Name</p>
+                            {{$order->invoice_no}}
                         </td>
-                        <td>06-02-2022</td>
-                        <td><span class="status pending">Pending</span></td>
+                        <td>{{$order->order_date}}</td>
+                        <td>{{$order->amount}}$</td>
+                        <td><span class="status {{$order->status}}">{{$order->status}}</span></td>
                     </tr>
-                    <tr>
-                        <td>
-                            <img src="{{ asset('backend/images/avatar.png')}}">
-                            <p>User Name</p>
-                        </td>
-                        <td>06-02-2022</td>
-                        <td><span class="status process">Process</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="{{ asset('backend/images/avatar.png')}}">
-                            <p>User Name</p>
-                        </td>
-                        <td>06-02-2022</td>
-                        <td><span class="status pending">Pending</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="{{ asset('backend/images/avatar.png')}}">
-                            <p>User Name</p>
-                        </td>
-                        <td>06-02-2022</td>
-                        <td><span class="status completed">Completed</span></td>
-                    </tr>
+                 
+                    @endforeach
                 </tbody>
             </table>
         </div>

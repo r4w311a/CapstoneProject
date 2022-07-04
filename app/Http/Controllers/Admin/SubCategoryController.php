@@ -14,7 +14,7 @@ class SubCategoryController extends Controller
 {
     public function view_subcategories(){
         $categories = Category::orderBy('category_name', 'ASC')->get();
-        $subcategories = SubCategory::latest()->paginate(5);
+        $subcategories = SubCategory::latest()->paginate(6);
         $subcategories_trash = SubCategory::onlyTrashed()->latest()->paginate(3);
 
         return view('admin.subcategories.index',compact('subcategories','subcategories_trash','categories' ));
@@ -71,5 +71,7 @@ public function p_delete_subcategory($id){
     $deleted_subcategories = SubCategory::withTrashed()->find($id)->forceDelete();
     return Redirect()->route('view-subcategories')->with('success', 'Category permanently deleted successfully');
 }
+
+
 
 }

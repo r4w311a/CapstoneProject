@@ -21,6 +21,7 @@ a {
 
   --light: #f9f9f9;
   --green: #0ca7aa;
+  --pink:#ff8f9c;
   --light-green: #cfefff;
   --grey: #eee;
   --dark-grey: #aaaaaa;
@@ -41,7 +42,6 @@ a {
 --niagara-700: #0d7478;
 --niagara-800: #105b5f;
 --niagara-900: #124c4f;
-
 
 }
 html {
@@ -76,7 +76,7 @@ body {
 	height: 56px;
 	display: flex;
 	align-items: center;
-	color: var(--green);
+	color: var(--pink);
 	position: sticky;
 	top: 0;
 	left: 0;
@@ -133,7 +133,7 @@ body {
 }
 
 #sidebar .side-menu.top li.active a {
-	color: var(--green);
+	color: var(--pink);
 	text-decoration: none;
 }
 
@@ -163,10 +163,10 @@ body {
 }
 #sidebar .side-menu.top li a:hover{
 	text-decoration: none;
-    color: var(--green)
+    color: var(--pink)
 }
 #sidebar .side-menu.top li.active a {
-    color: var(--green);
+    color: var(--pink);
 }
 #sidebar.hide .side-menu li a {
 	width: calc(48px - (4px * 2));
@@ -240,7 +240,7 @@ body {
 }
 
 #content nav .nav-link:hover {
-	color: var(--green);
+	color: var(--pink);
 }
 
 #content nav form {
@@ -272,7 +272,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--green);
+	background: var(--pink);
 	color: var(--light);
 	font-size: 18px;
 	border: none;
@@ -331,10 +331,9 @@ body {
 }
 #content main .head-title .left .breadcrumb li a {
 	color: var(--dark-grey);
-	pointer-events: none;
 }
 #content main .head-title .left .breadcrumb li a.active {
-	color: var(--green);
+	color: var(--pink);
 	pointer-events: unset;
 }
 .btn-download {
@@ -342,7 +341,20 @@ body {
 	padding: 0 16px;
 	margin: 12px;
 	border-radius: 36px;
-	background-color: var(--green) !important;
+	background-color: var(--pink) !important;
+	color: var(--light);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 10px;
+	font-weight: 500;
+}
+.btn-download:hover {
+	height: 36px;
+	padding: 0 16px;
+	margin: 12px;
+	border-radius: 36px;
+	background-color: var(--pink) !important;
 	color: var(--light);
 	display: flex;
 	justify-content: center;
@@ -377,8 +389,8 @@ body {
 	align-items: center;
 }
 #content main .box-info li:nth-child(1) .bx {
-	background: var(--light-green);
-	color: var(--dark-blue);
+	background: var(--pink);
+    color: var(--light);
 }
 #content main .box-info li:nth-child(2) .bx {
 	background: var(--light-yellow);
@@ -457,7 +469,7 @@ body {
 #content main .table-data .order table td img {
 	width: 36px;
 	height: 36px;
-	border-radius: 50%;
+	border-radius: 20%;
 	object-fit: cover;
 }
 #content main .table-data .order table tbody tr:hover {
@@ -470,13 +482,13 @@ body {
 	border-radius: 20px;
 	font-weight: 700;
 }
-#content main .table-data .order table tr td .status.completed {
-	background: var(--green);
+#content main .table-data .order table tr td .status.Confirmed {
+	background: var(--pink);
 }
-#content main .table-data .order table tr td .status.process {
+#content main .table-data .order table tr td .status.Processing {
 	background: var(--yellow);
 }
-#content main .table-data .order table tr td .status.pending {
+#content main .table-data .order table tr td .status.Pending {
 	background: var(--orange);
 }
 
@@ -484,6 +496,14 @@ body {
 	display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 2fr 500px;
+	gap: 25px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.full-container{
+	display: grid;
+    grid-template-columns: 4r 1fr;
+    grid-template-rows: 1fr 500px;
 	gap: 25px;
 	padding: 10px;
 	box-sizing: border-box;
@@ -496,7 +516,7 @@ body {
 
 
 .content-small {
-	height: 40vh;
+	height: 80vh;
 }
 
 
