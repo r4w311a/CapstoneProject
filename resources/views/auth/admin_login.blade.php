@@ -20,7 +20,7 @@ rel="stylesheet"
     <title>Admin Panel | Login</title>
 </head>
 <body>
-    <section class="vh-100" style="background-color: #0ca7aa;">
+    <section class="vh-100" style="background-color: #ff8f9c;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -54,10 +54,10 @@ rel="stylesheet"
                     
                   </div>
       
-                  <button class="btn btn-primary btn-lg btn-block" style="background-color: #0ca7aa" type="submit">Login</button>
+                  <button class="btn btn-primary btn-lg btn-block" style="background-color: #ff8f9c" type="submit">Login</button>
                   <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" style="color: #0ca7aa" href="{{ route('password.request') }}">
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900" style="color: #ff8f9c" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
                     @endif
