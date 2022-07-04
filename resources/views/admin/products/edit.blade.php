@@ -85,7 +85,6 @@
                         @error('selling_price')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-
                         
 
                         <label class="form-label" for="product_thumbnail">Product Thumbnail: (not required)</label>
