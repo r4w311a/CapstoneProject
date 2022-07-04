@@ -27,8 +27,9 @@
 
             <div class="content-large">
 
-                <form method="POST" enctype="multipart/form-data" id="upload-image" action="">
-                    @csrf
+                <form method="POST" enctype="multipart/form-data" id="upload-image"
+                            action="{{ route('update-product', $product->id) }}">
+                                        @csrf
                     <div class="form-group">
                         <label for="category">Category</label>
                         <select required name="category_id" class="form-select form-select-sm mb-3 mt-3"
@@ -65,16 +66,18 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                         <label for="product_color">Product Color:</label>
-                        <input required id="product_color" name='product_color' value='' class="form-control mb-3 mt-3">
-                    
+                        <input id="product_color" name='product_color' value="Black,White,Red" data-role="tagsinput" class="form-control mb-3 mt-3">
                         @error('product_color')
                             <span class="text-danger">{{ $message }}</span>
+                            <br>
                         @enderror
+                        <br>
                         <label for="product_size">Product Size:</label>
-                        <input required id="product_size" name='product_size' value=''
+                        <input id="product_size" name='product_size' value="Small,Medium,Large" data-role="tagsinput"
                             class="form-control mb-3 mt-3">
                         @error('product_size')
                             <span class="text-danger">{{ $message }}</span>
+                            <br>
                         @enderror
 
                         <label for="selling_price">Price:</label>
@@ -83,14 +86,10 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
 
-                        <label for="discount_price">Discount:</label>
-                        <input required type="text" value="{{ $product->discount_price }}" class="form-control mb-3 mt-3" id="discount_price" name="discount_price">
-                        @error('discount_price')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                        
 
-                        <label class="form-label" for="product_thumbnail">Product Thumbnail:</label>
-                        <input type="file" class="form-control" id="product_thumbnail" name="product_thumbnail" />
+                        <label class="form-label" for="product_thumbnail">Product Thumbnail: (not required)</label>
+                        <input type="file" value="asdasd" class="form-control" id="product_thumbnail" name="product_thumbnail" />
 
                         @error('product_thumbnail')
                             <span class="text-danger">{{ $message }}</span>
@@ -117,7 +116,7 @@
 
 
                     </div>
-                    <button type="submit" class="btn-download">Add Product</button>
+                    <button type="submit" class="btn-download">Edit Product</button>
                 </form>
 
 

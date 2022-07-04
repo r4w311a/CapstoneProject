@@ -55,7 +55,7 @@ class ProductController extends Controller
             'product_qty' => 'required',
             'selling_price' => 'required',
             'description' => 'required',
-            'product_thumbnail' => 'required|image|mimes:jpg,png,jpeg|max:5048',
+            'product_thumbnail' => 'required|image|mimes:jpg,png,jpeg,webp|max:5048',
             
            
         ]);
@@ -77,7 +77,6 @@ class ProductController extends Controller
             'product_size' => $request->product_size,
             'product_color' => $request->product_color,
             'selling_price' => $request->selling_price,
-            'discount_price' => $request->selling_price,
             'description' => $request->description,
             'product_thumbnail' => $ImageName,
             'status' => 1,
@@ -119,22 +118,37 @@ class ProductController extends Controller
             'product_qty' => 'required',
             'selling_price' => 'required',
             'description' => 'required',
-            'product_thumbnail' => 'required|image|mimes:jpg,png,jpeg|max:5048',
+            'product_thumbnail' => 'image|mimes:jpg,png,jpeg,webp|max:5048',
         ]);
-          Category::where('id', $id)->update([
-            'category_id' => $request->category_id,
-            'subcategory_id' => $request->subcategory_id,
-            'product_name' => $request->product_name,
-            'product_qty' => $request->product_qty,
-            'product_size' => $request->product_size,
-            'product_color' => $request->product_color,
-            'selling_price' => $request->selling_price,
-            'discount_price' => $request->selling_price,
-            'description' => $request->description,
-            'status' => 1,
-            'new_arrivals' => $request->new_arrivals ? 1 : 0,
-            'featured' => $request->featured ? 1 : 0,
-          ]);
+
+         
+
+          $product = Product::find($id);
+       
+          $product->category_id = $validated['category_id'];
+          $product->subcategory_id = $validated['subcategory_id'];
+          $product->product_name = $validated['product_name'];
+          $product->product_qty = $validated['product_qty'];
+          $product->product_size = $request->product_size; 
+          $product->product_color = $request->product_color; 
+          $product->selling_price = $validated['selling_price'];
+          $product->description = $validated['description'];
+          $product->new_arrivals = $request->new_arrivals;
+          $product->featured = $request->featured;
+     
+  
+          
+          if ($request->hasFile('product_thumbnail')) {
+              $product_thumbnail = $request->file('product_thumbnail');
+              $newImageName = time() . '-' . $request->product_name . '.' . $request->product_thumbnail->extension();
+              $request->product_thumbnail->move(public_path('/uploads/products/thumbnails'), $newImageName);
+              $product->product_thumbnail = $newImageName;
+          }
+  
+          $product->save();
+
+
+
           return Redirect()->route('view-products')->with('success', 'Product updated successfully');
     }
 
