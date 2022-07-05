@@ -152,7 +152,7 @@
 
                                         <td class="align-middle">{{ $item->product->product_name }}</td>
                                         <td class="align-middle"><img
-                                                src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}"
+                                                src="{{Storage::disk('s3')->url('products/' . $product->item)}}"
                                                 class="img-thumbnail mx-auto " style="width:80px;height:80px" />
                                         </td>
                                         <td class="align-middle">{{ $item->color }}</td>
