@@ -54,7 +54,7 @@
                                             {{ $products->firstItem() + $loop->index }}</th>
                                         <td class="align-middle">{{ $product->product_name }}</td>
                                         <td class="align-middle"><img
-                                                src="{{ asset('uploads/products/thumbnails/' . $product->product_thumbnail) }}"
+                                                src="{{Storage::disk('s3')->url('products/' . $ImageName)}}"
                                                 class="img-thumbnail mx-auto " style="width:80px;height:80px" />
                                         </td>
                                         <td class="align-middle">{{ $product->category->category_name }}</td>
