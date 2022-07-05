@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Carbon;
 use App\Models\SubCategory;
 use App\Models\Category;
@@ -60,12 +61,21 @@ class ProductController extends Controller
            
         ]);
 
-        $image = $request->file('product_thumbnail');
         
-        $ImageName = time() . '-' . str_replace( " ", "-", $request->product_name ) . '.' . $request->product_thumbnail->extension();
-        $request->product_thumbnail->move(public_path('/uploads/products/thumbnails'), $ImageName);
 
 
+        if ($request->hasFile('product_thumbnail')) {
+            $product_thumbnail = $request->file('product_thumbnail');
+            $ImageName = time() . '-' . str_replace( " ", "-", $request->product_name ) . '.' . $request->product_thumbnail->extension();
+            $product_thumbnail->storeAs('products/', $ImageName, 's3');
+            
+        }
+
+
+
+
+        //$request->product_thumbnail->move(public_path('/uploads/products/thumbnails'), $ImageName);
+     
 
 
         $product_id = Product::insertGetId([

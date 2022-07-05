@@ -46,11 +46,11 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AKIAZDLG2JY3WWUSRQO5'),
-            'secret' => env('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'),
-            'region' => env('eu-central-1'),
-            'bucket' => env('capstone-image-uploader'),
-            'url' => env('https://capstone-image-uploader.eu-central-1.amazonaws.com'),
+            'key' => 'AKIAZDLG2JY3WWUSRQO5',
+            'secret' => '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',
+            'region' => 'eu-central-1',
+            'bucket' => 'capstone-image-uploader',
+            'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
