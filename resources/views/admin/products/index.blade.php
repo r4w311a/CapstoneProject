@@ -30,7 +30,7 @@
                 <div class="table-data">
                     <div class="order">
                         <div class="head">
-                            <h3>Products List ({{ $products->count() }})</h3>
+                            <h3>Products List ({{ $total_products }})</h3>
                         </div>
                         <table>
                             <thead>

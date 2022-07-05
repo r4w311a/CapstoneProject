@@ -24,9 +24,9 @@ class ProductController extends Controller
        
         $products = Product::latest()->paginate(10);
         $products_trash = Product::onlyTrashed()->latest()->paginate(3);
-        
+        $total_products = Product::count();
 
-        return view('admin.products.index', compact('products','products_trash'));
+        return view('admin.products.index', compact('products','products_trash','total_products'));
     }
 
 
