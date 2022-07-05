@@ -75,7 +75,7 @@ Malkawi eCommerce
 
       <div class="overlay">
         <a href="" class="product-thumb">
-          <img href="" src="{{ asset('uploads/products/thumbnails/' . $product->product_thumbnail) }}" alt="" />
+          <img href="" src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}" alt="" />
         </a>
       </div>
       <div class="product-info">
@@ -115,7 +115,7 @@ Malkawi eCommerce
     <div class="product-item">
       <div class="overlay">
         <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}" class="product-thumb">
-          <img src="{{ asset('uploads/products/thumbnails/' . $product->product_thumbnail) }}" alt="" />
+          <img src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}" alt="" />
         </a>
       </div>
       <div class="product-info">

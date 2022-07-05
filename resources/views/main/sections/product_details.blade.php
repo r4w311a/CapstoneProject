@@ -81,7 +81,7 @@
                 <div class="product-item">
                     <div class="overlay">
                         <a href="" class="product-thumb">
-                            <img src="{{ asset('uploads/products/thumbnails/' . $product->product_thumbnail) }}"
+                            <img src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}"
                                 alt="" />
                         </a>
                         

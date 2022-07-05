@@ -17,12 +17,12 @@
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
-           
+            
             @foreach ($cart_items as $item)
                 <tr>
                     <td>
                         <div class="cart-info">
-                            <img src="{{ asset('uploads/products/thumbnails/' . $item->options->image) }}"
+                            <img src="{{Storage::disk('s3')->url('products/' . $item->options->image)}}"
                                 alt="" />
                             <div>
                                 <p>{{ $item->name }}</p>
@@ -102,7 +102,7 @@
                 <div class="product-item">
                     <div class="overlay">
                         <a href="" class="product-thumb">
-                            <img src="{{ asset('uploads/products/thumbnails/' . $product->product_thumbnail) }}"
+                            <img src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}"
                                 alt="" />
                         </a>
                         
