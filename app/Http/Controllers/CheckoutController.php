@@ -32,7 +32,7 @@ class checkoutController extends Controller
             'order_date' => Carbon::now()->format('d F Y'),
             'order_month' => Carbon::now()->format('F'),
             'order_year' => Carbon::now()->format('Y'),
-            'status' => 'Pending',
+            'status' => 'Processing',
             'created_at' => Carbon::now(),
     
             ]);
@@ -54,8 +54,7 @@ class checkoutController extends Controller
     
             }
             Cart::destroy();
-            alert()->success('Thank You!','Your order has been placed successfully');
-
+            toast('Your order has been placed successfully','success');
             return redirect('/dashboard');
     }
 }

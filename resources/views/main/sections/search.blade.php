@@ -9,7 +9,7 @@ Search Results
             <div class="top container">
               <h1>Search results</h1>
               <br>
-              
+             
             </div>
             <div class="product-center container">
                  @if(count($products) > 0)

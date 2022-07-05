@@ -92,17 +92,29 @@
                                 <td>{{ $order->status }}</td>
                             </tr>
 
-                            @if ($order->status == 'Pending')
+                            @if ($order->status == 'Processing')
                                 <tr>
-                                <th><a href="{{ route('pending.confirm',$order->id) }}" class="btn-download">
-                                    <span >Confirm Order</span>
-                                </a></th>
+                                    <th><a href="{{ route('shipped', $order->id) }}" class="btn-download">
+                                            <span>Order Shipped</span>
+                                        </a></th>
                                 </tr>
-                            @elseif ($order->status == 'Confirmed')
-                            <tr>
-                                <th><a href="{{ route('confirm.process',$order->id) }}" class="btn-download">
-                                    <span>Process Order</span>
-                                </a></th>
+                            @elseif ($order->status == 'Shipped')
+                                <tr>
+                                    <th><a href="{{ route('delivered', $order->id) }}" class="btn-download">
+                                            <span>Order Delivered</span>
+                                        </a></th>
+                                </tr>
+                            @elseif ($order->status == 'Delivered')
+                                <tr>
+                                    <th><a href="{{ route('completed', $order->id) }}" class="btn-download">
+                                            <span>Order Completed</span>
+                                        </a></th>
+                                </tr>
+                            @elseif ($order->status == 'Completed')
+                                <tr>
+                                    <th><a href="{{ route('cancelled', $order->id) }}" class="btn-download">
+                                            <span>Cancel Order</span>
+                                        </a></th>
                                 </tr>
                             @endif
                         </table>

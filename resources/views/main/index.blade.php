@@ -64,7 +64,7 @@ Malkawi eCommerce
 <section class="section new-arrival">
   <div class="title">
     <h1>NEW ARRIVALS</h1>
-    <p>All the latest picked from designer of our store</p>
+   
   </div>
 
   <div class="product-center">
@@ -106,7 +106,7 @@ Malkawi eCommerce
 <section class="section new-arrival">
   <div class="title">
     <h1>Featured</h1>
-    <p>All the latest picked from designer of our store</p>
+    
   </div>
 
   <div class="product-center">
@@ -117,7 +117,6 @@ Malkawi eCommerce
         <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}" class="product-thumb">
           <img src="{{ asset('uploads/products/thumbnails/' . $product->product_thumbnail) }}" alt="" />
         </a>
-        <span class="discount">50%</span>
       </div>
       <div class="product-info">
         <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}">{{$product->product_name}}</a>

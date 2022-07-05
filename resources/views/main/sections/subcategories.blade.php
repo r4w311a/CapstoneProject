@@ -15,7 +15,8 @@
                 <a href="{{URL::current() . "?sort=price_desc" }}">Price: High to Low</a>
                 <a href="{{URL::current() . "?sort=newest" }}">Newest</a>
                 <a href="{{URL::current() . "?sort=older" }}">Older</a>
-              </div></div>
+              </div>
+            </div>
             <div class="product-center container">
                  @if(count($products) > 0)
                 @foreach ($products as $product)

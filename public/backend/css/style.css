@@ -483,14 +483,22 @@ body {
 	border-radius: 20px;
 	font-weight: 700;
 }
-#content main .table-data .order table tr td .status.Confirmed {
-	background: var(--pink);
-}
+
+
 #content main .table-data .order table tr td .status.Processing {
 	background: var(--yellow);
 }
-#content main .table-data .order table tr td .status.Pending {
+#content main .table-data .order table tr td .status.Shipped {
 	background: var(--orange);
+}
+#content main .table-data .order table tr td .status.Delivered {
+	background: var(--pink);
+}
+#content main .table-data .order table tr td .status.Completed {
+	background: var(--green);
+}
+#content main .table-data .order table tr td .status.Canceled {
+	background: var(--red);
 }
 
 .myContainer{

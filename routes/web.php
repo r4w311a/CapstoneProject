@@ -131,8 +131,10 @@ Route::middleware(['auth:sanctum,admin', config('jetstream.auth_session'), 'veri
     Route::prefix('admin/orders/')->group(function () {
         Route::get('/', [OrderController::class, 'view_orders'])->name('view-orders');
         Route::get('{order_id}', [OrderController::class, 'PendingDetails'])->name('pending.details');
-        Route::get('confirm/{order_id}', [OrderController::class, 'pendingConfirm'])->name('pending.confirm');
-        Route::get('proccess/{order_id}', [OrderController::class, 'confirmProcess'])->name('confirm.process');
+        Route::get('shipped/{order_id}', [OrderController::class, 'shipped'])->name('shipped');
+        Route::get('delivered/{order_id}', [OrderController::class, 'delivered'])->name('delivered');
+        Route::get('completed/{order_id}', [OrderController::class, 'completed'])->name('completed');
+        Route::get('cancelled/{order_id}', [OrderController::class, 'cancelled'])->name('cancelled');
         
     });
 
