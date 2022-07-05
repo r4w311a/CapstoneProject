@@ -81,6 +81,7 @@ Route::middleware(['auth:sanctum,admin', config('jetstream.auth_session'), 'veri
     Route::get('/admin/logout', [LogoutController::class, 'destroy'])->name('admin.logout');
 
     Route::get('/admin/settings', [AdminSettingsController::class, 'AdminSettings'])->name('admin.settings');
+    Route::get('/admin/changepassword', [AdminSettingsController::class, 'changePassword'])->name('admin.change.password');
 
 
 

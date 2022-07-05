@@ -18,27 +18,16 @@
 </head>
 
 <body>
-    <!--
-    - HEADER
-  -->
+
 
     @include('main.body.header')
 
-    <!--
-    - MAIN
-  -->
 
     @yield('content')
     @yield('login')
     @yield('productDetails')
-    <!--
-    - FOOTER
-  -->
-
+  
     @include('main.body.footer')
-    <!--
-    - custom js link
-  -->
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>

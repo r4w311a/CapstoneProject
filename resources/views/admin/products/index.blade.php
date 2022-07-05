@@ -39,8 +39,8 @@
                                     <th>Product Name</th>
                                     <th>Product Image</th>
                                     <th>Product Category</th>
+                                    <th>Sub Category</th>
                                     <th>Product Price</th>
-                                    <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -58,8 +58,8 @@
                                                 class="img-thumbnail mx-auto " style="width:80px;height:80px" />
                                         </td>
                                         <td class="align-middle">{{ $product->category->category_name }}</td>
+                                        <td class="align-middle">{{ $product->subcategory->subcategory_name }}
                                         <td class="align-middle">{{ $product->selling_price . '$' }}</td>
-                                        <td class="align-middle">{{ $product->created_at->diffForHumans() }}
                                         </td>
                                         <td class="align-middle">
                                             <a href="{{ route('edit-product', $product->id) }}"
