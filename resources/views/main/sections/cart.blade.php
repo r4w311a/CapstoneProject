@@ -8,6 +8,7 @@
     <div class="container cart">
         <h1>Your Cart</h1>
         <br>
+        @if (Cart::count() > 0)
         <table>
             <tr>
                 <th>Product</th>
@@ -61,6 +62,11 @@
 
 
         </table>
+        @else
+        <div class="alert alert-danger center-text">
+            <strong>Your cart is empty</strong>
+        </div>
+        @endif
         <div class="total-price">
             <table>
                 <tr>
@@ -76,7 +82,11 @@
                     <td>{{ Cart::total() }}$</td>
                 </tr>
             </table>
+            @if (Cart::count() > 0)
             <a href="{{url('/checkout')}}" class="checkout btn">Proceed To Checkout</a>
+            @else
+            <a href="#" class="disabled-btn">Proceed To Checkout</a>
+            @endif
         </div>
     </div>
 

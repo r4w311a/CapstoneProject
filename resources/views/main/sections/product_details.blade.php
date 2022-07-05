@@ -74,7 +74,7 @@
     <section class="section featured">
         <div class="top container">
             <h1>Related Products</h1>
-            <a href="#" class="view-more">View more</a>
+            <a href="{{url('category/'.$product->subcategory_id)}}" class="view-more">View more</a>
         </div>
         <div class="product-center container">
             @foreach ($related as $product)
@@ -94,7 +94,7 @@
                     </div>
                     <ul class="icons">
                         <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}"><li><i class='bx bxs-show'></i></li></a>
-                        <li><i class="bx bx-heart"></i></li>
+                        
                     </ul>
                 </div>
             @endforeach

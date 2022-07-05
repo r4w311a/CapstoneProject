@@ -1523,3 +1523,18 @@ table tr:hover {
   opacity: 0;
   z-index: -1;
 }
+.center-text{
+  text-align: center;
+}
+
+.disabled-btn {
+  background: var(--grey2);
+  padding: 0.8rem 4rem;
+  color: #fff;
+  border-radius: 3rem;
+  font-size: 1.7rem;
+  border: none;
+}
+.disabled-btn:hover {
+  cursor: not-allowed
+}

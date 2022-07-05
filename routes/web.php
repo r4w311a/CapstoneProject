@@ -28,11 +28,7 @@ use App\Http\Controllers\LogoutController;
 
 // Main routes
 
-Route::group(['prefix' => 'user', 'middleware' => ['user:auth']], function () {
-    
-    // Require Login
 
-});
 
 
 Route::middleware(['auth:sanctum,web', config('jetstream.auth_session'), 'verified'])->group(function () {
@@ -40,10 +36,15 @@ Route::middleware(['auth:sanctum,web', config('jetstream.auth_session'), 'verifi
 
     Route::get('/dashboard', [indexController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard/order_details/{order_id}', [indexController::class, 'OrderDetails']);
+
     Route::get('/logout', [LogoutController::class, 'perform'])->name('logout');
 
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/addtocart', [CartController::class, 'AddToCart'])->name('cart.store');
+    Route::post('/removeFromCart', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    Route::post('/updateQty', [CartController::class, 'updateQty'])->name('cart.updateQty');
+
     Route::prefix('/checkout')->group(function () {
-       
         Route::get('/', [CartController::class, 'checkout'])->name('cart.checkout');
         Route::post('store/', [CartController::class, 'store_checkout'])->name('store.checkout');
         Route::post('cash/', [CheckoutController::class, 'checkout'])->name('order.checkout');
@@ -52,12 +53,8 @@ Route::middleware(['auth:sanctum,web', config('jetstream.auth_session'), 'verifi
 
 // User Routes
 Route::get('/', [indexController::class, 'index']);
-Route::get('/cart', [CartController::class, 'index']);
 Route::get('/search', [indexController::class, 'search']);
 
-Route::post('/addtocart', [CartController::class, 'AddToCart'])->name('cart.store');
-Route::post('/removeFromCart', [CartController::class, 'removeFromCart'])->name('cart.remove');
-Route::post('/updateQty', [CartController::class, 'updateQty'])->name('cart.updateQty');
 
 
 Route::get('/category/{id}/{product_slug}', [indexController::class, 'productDetails']);

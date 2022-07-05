@@ -28,13 +28,13 @@ Search Results
                   </div>
                   <ul class="icons">
                     <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}"><li><i class='bx bxs-show'></i></li></a>
-                    <li><i class="bx bx-heart"></i></li>
+                    
                   </ul>
                 </div>
                 @endforeach
                 @else 
                 <div class="alert alert-danger">
-                    <strong>No Product Found</strong>
+                    <strong>there are no products that match the search</strong>
                 </div>
                 @endif
 

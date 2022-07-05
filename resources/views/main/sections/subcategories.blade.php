@@ -34,7 +34,7 @@
                   </div>
                   <ul class="icons">
                     <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}"><li><i class='bx bxs-show'></i></li></a>
-                    <li><i class="bx bx-heart"></i></li>
+                    
                   </ul>
                 </div>
                 @endforeach
