@@ -140,9 +140,9 @@ class ProductController extends Controller
           
           if ($request->hasFile('product_thumbnail')) {
               $product_thumbnail = $request->file('product_thumbnail');
-              $newImageName = time() . '-' . $request->product_name . '.' . $request->product_thumbnail->extension();
-              $request->product_thumbnail->move(public_path('/uploads/products/thumbnails'), $newImageName);
-              $product->product_thumbnail = $newImageName;
+              $ImageName = time() . '-' . str_replace( " ", "-", $request->product_name ) . '.' . $request->product_thumbnail->extension();
+              $request->product_thumbnail->move(public_path('/uploads/products/thumbnails'), $ImageName);
+              $product->product_thumbnail = $ImageName;
           }
   
           $product->save();

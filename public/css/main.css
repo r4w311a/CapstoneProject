@@ -873,9 +873,7 @@ footer .row {
 }
 
 .section .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  
   margin-bottom: 4rem;
 }
 
@@ -1005,12 +1003,12 @@ th {
   font-weight: normal;
   border-radius: 25px;
   width: 35rem;
-  padding: 15px;
+  padding: 7px;
 }
 
 td {
   padding: 1rem 0.5rem;
-    background-color: #ff8f9c45;
+    
     border-radius: 12px;
 }
 
@@ -1429,15 +1427,16 @@ table tr:hover {
   border-radius: 8px;
 }
 .pending {
-  background-color: #9e460047;
+  background-color: #f5f5dc;
   padding: 5px;
-  border-radius: 9px;
+  border-radius: 12px;
+  font-size: 1.5rem;
 
 }
 
 .order-icons a{
   color: #ffffff;
-    font-size: 3rem;
+  font-size: 2rem;
     background-color: #ff8f9c;
     text-align: center;
     display: inline-flex;
@@ -1458,12 +1457,7 @@ table tr:hover {
   padding: 6px;
 }
 .shipping-information th {
-  text-align: center;
-  color: #fff;
-  background-color: var(--pink);
-  font-weight: normal;
-  border-radius: 25px;
-  width: 35rem;
+  width: 21rem !important;
 
 }
 
@@ -1474,13 +1468,23 @@ table tr:hover {
   color:white;
 }
 
-.sorting a {
-  padding: 9px;
-  margin: 6px;
-  background-color: #f5f5dc;
-  border-radius: 12px;
+.sorting{
+  display: flex;
+    justify-content: center;
 }
-
+.sorting a {
+  display: flex;
+    padding: 9px;
+    margin: 6px;
+    background-color: #f5f5dc;
+    border-radius: 12px;
+}
+.sorting span {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
 .box{
   position: relative;
 }
