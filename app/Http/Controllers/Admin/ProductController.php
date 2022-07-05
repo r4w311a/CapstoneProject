@@ -53,8 +53,8 @@ class ProductController extends Controller
             'category_id' => 'required',
             'subcategory_id' => 'required',
             'product_name' => 'required|max:555',
-            'product_qty' => 'required',
-            'selling_price' => 'required',
+            'product_qty' => 'required|numeric|min:1|max:5',
+            'selling_price' => 'required|numeric|min:1|max:5',
             'description' => 'required',
             'product_thumbnail' => 'required|image|mimes:jpg,png,jpeg,webp|max:5048',
             

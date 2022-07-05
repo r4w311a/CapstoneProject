@@ -60,7 +60,7 @@
                             <br>
                         @enderror
                         <label for="product_qty">Quantity:</label>
-                        <input required type="text" class="form-control mb-3 mt-3" id="product_qty" name="product_qty">
+                        <input required type="number" class="form-control mb-3 mt-3" id="product_qty" name="product_qty">
                         @error('product_qty')
                             <span class="text-danger">{{ $message }}</span>
                             <br>
@@ -81,7 +81,7 @@
                         @enderror
 <br>
                         <label for="selling_price">Price:</label>
-                        <input required type="text" class="form-control mb-3 mt-3" id="selling_price" name="selling_price">
+                        <input required type="number" class="form-control mb-3 mt-3" id="selling_price" name="selling_price">
                         @error('selling_price')
                             <span class="text-danger">{{ $message }}</span>
                             <br>
