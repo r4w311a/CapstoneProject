@@ -66,14 +66,14 @@
                             <br>
                         @enderror
                         <label for="product_color">Product Color:</label>
-                        <input id="product_color" name='product_color' value="Black,White,Red" data-role="tagsinput" class="form-control mb-3 mt-3">
+                        <input id="product_color" name='product_color' value="" data-role="tagsinput" class="form-control mb-3 mt-3">
                         @error('product_color')
                             <span class="text-danger">{{ $message }}</span>
                             <br>
                         @enderror
                         <br>
                         <label for="product_size">Product Size:</label>
-                        <input id="product_size" name='product_size' value="Small,Medium,Large" data-role="tagsinput"
+                        <input id="product_size" name='product_size' value="" data-role="tagsinput"
                             class="form-control mb-3 mt-3">
                         @error('product_size')
                             <span class="text-danger">{{ $message }}</span>
