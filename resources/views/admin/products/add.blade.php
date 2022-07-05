@@ -87,12 +87,6 @@
                             <br>
                         @enderror
 
-                        <label for="discount_price">Discount:</label>
-                        <input type="text" class="form-control mb-3 mt-3" id="discount_price" name="discount_price">
-                        @error('discount_price')
-                            <span class="text-danger">{{ $message }}</span>
-                            <br>
-                        @enderror
 
                         <label class="form-label" for="product_thumbnail">Product Thumbnail:</label>
                         <input required type="file" class="form-control" id="product_thumbnail" name="product_thumbnail" />

@@ -61,10 +61,10 @@ class ProductController extends Controller
         ]);
 
         $image = $request->file('product_thumbnail');
-        
         $ImageName = time() . '-' . str_replace( " ", "-", $request->product_name ) . '.' . $request->product_thumbnail->extension();
-        $request->product_thumbnail->move(public_path('/uploads/products/thumbnails'), $ImageName);
 
+        //$request->product_thumbnail->move(public_path('/uploads/products/thumbnails'), $ImageName);
+        $image->storeAs('uploads/', $ImageName, 's3');
 
 
 
