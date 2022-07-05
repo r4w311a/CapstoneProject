@@ -9,7 +9,7 @@
         <div class="details container">
             <div class="left image-container">
                 <div class="main">
-                    <img src="{{ asset('uploads/products/thumbnails/' . $product->product_thumbnail) }}" id="zoom"
+                    <img src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}" id="zoom"
                         alt="" />
                 </div>
             </div>

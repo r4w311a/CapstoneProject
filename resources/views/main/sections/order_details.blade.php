@@ -107,7 +107,7 @@
                                         <tr>
                                             <td>
                                                 <div class="cart-info">
-                                                    <img src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}"
+                                                    <img src="{{Storage::disk('s3')->url('products/' . $item->product_thumbnail)}}"
                                                         alt="" />
                                                     <div>
                                                         <p>{{$item->product->product_name}}</p>
