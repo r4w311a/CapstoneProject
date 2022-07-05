@@ -16,8 +16,8 @@ class indexController extends Controller
      {
           $products = Product::get()->all();
 
-          $new_arrivals = Product::where('new_arrivals', 1)->limit(8)->get();
-          $featured = Product::where('featured', 1)->limit(4)->get();
+          $new_arrivals = Product::where('new_arrivals', 1)->limit(8)->orderBy('created_at', 'DESC')->get();
+          $featured = Product::where('featured', 1)->limit(8)->orderBy('created_at', 'DESC')->get();
           $cart = Cart::content();
           return view('main.index', compact('products', 'new_arrivals', 'featured', 'cart'));
      }
