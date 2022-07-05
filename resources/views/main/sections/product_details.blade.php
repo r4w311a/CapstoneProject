@@ -80,7 +80,7 @@
             @foreach ($related as $product)
                 <div class="product-item">
                     <div class="overlay">
-                        <a href="" class="product-thumb">
+                        <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}" class="product-thumb">
                             <img src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}"
                                 alt="" />
                         </a>
