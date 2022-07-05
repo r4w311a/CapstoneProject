@@ -23,7 +23,7 @@
 
                 <div class="product-item">
                   <div class="overlay">
-                    <a href="{{ url('/product/details/'. $product->id) }}" class="product-thumb">
+                    <a href="{{ url('/product/details/'. $product->id).'/' . $product->product_slug}}" class="product-thumb">
                       <img src="{{Storage::disk('s3')->url('products/' . $product->product_thumbnail)}}" alt="" />
                     </a>
                   </div>
