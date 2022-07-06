@@ -51,7 +51,7 @@
                                         </th>
                                         <td class="align-middle">{{ $order->order_date }}</td>
                                         <td style="color:brown" class="align-middle">{{ $order->invoice_no }}</td>
-                                        <td class="align-middle">{{ $order->amount }}</td>
+                                        <td class="align-middle">{{ $order->amount }}$</td>
                                         <td class="align-middle">{{ $order->payment_method }}</td>
                                         <td class="align-middle"><span
                                                 class="status {{ $order->status }}">{{ $order->status }}</span></td>

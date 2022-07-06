@@ -1280,6 +1280,7 @@ td img {
   background-color: var(--pink);
   color: white;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .login-form form p a {
