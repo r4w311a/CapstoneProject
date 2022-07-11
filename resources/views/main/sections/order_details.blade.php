@@ -107,11 +107,11 @@
                                         <tr>
                                             <td>
                                                 <div class="cart-info">
-                                                    <img src="{{Storage::disk('s3')->url('products/' . $item->product_thumbnail)}}"
+                                                    <img src="{{Storage::disk('s3')->url('products/' . $item->product->product_thumbnail)}}"
                                                         alt="" />
                                                     <div>
                                                         <p>{{$item->product->product_name}}</p>
-                                                        <span>Price : {{ $item->product->product_price }}$ </span> <br />
+                                                        <span>Price : {{ $item->price }}$ </span> <br />
                                                     </div>
                                                 </div>
                                             </td>
